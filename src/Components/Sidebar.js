@@ -5,26 +5,24 @@ import micon from '../assets/chat-4-line.png'
 import help from '../assets/question-line.png'
 import activity from '../assets/history-line.png'
 import settings from '../assets/settings-5-line.png'
-import { useGSAP } from '@gsap/react'
 
 
 
 const Sidebar = () => {
-  const [menubar, setmenubar] = useState(false)
-  
 
+  const [menubar, setmenubar] = useState(false)
  
   return (
-    <div className={` h-screen transition-all  ease-in-out ${menubar==false?"w-[7.6vh]":"w-[31.7vh]"}  bg-[#1E1F20]`}>
+    <div className={` h-screen duration-200 transition-all  ease-in-out ${menubar==false?"w-[7.6vh]":"w-[31.7vh]"}  bg-[#1E1F20]`}>
       <div className="px-3 py-4 h-screen flex flex-col justify-between ">
-       <div className="flex  flex-col items-start gap-10">
+       <div className="flex   flex-col items-start gap-10">
             <img onClick={()=>{setmenubar(menubar==true?false:true) 
-              }
+             }
               } className='bg-cover rounded-full p-2  hover:bg-[#2F3030]' src={menu} alt="" />
             <div className="flex flex-col gap-4 items-start ">
-              <div className=" flex items-center  bg-[#1A1A1C] px-2 rounded-full py-2">
+              <div className="new duration-500 transition-all  ease-in-out flex items-center  bg-[#1A1A1C] px-2 rounded-full py-2">
                 <img className='h-6' src={add} alt="" />  
-                <h5 className={`text-[#666565] font-semibold ${menubar==false?"hidden":"px-3"}`}  >New chat</h5>
+                <h5 className={` text-[#666565] font-semibold ${menubar==false?"hidden":"px-3"}`} >New chat</h5>
               </div>
               <h5 className={`pl-3 text-white transition-all  ease-in-out delay-75 text-sm font-semibold ${menubar==false?"hidden":""}`}>Recent</h5>
               <div className={`recent-container transition-all  ease-in-out delay-75  ${menubar==false?"hidden":""}`}>
@@ -46,7 +44,7 @@ const Sidebar = () => {
          </div>
          <div className=" flex items-center gap-2.5 hover:bg-[#2F3030] px-2.5 rounded-full py-2.5 ">
           <img className='h-5' src={settings} alt="" />
-          <h5 className={`text-white text-sm ${menubar==false?"hidden":""}`}></h5>
+          <h5 className={`text-white  text-sm ${menubar==false?"hidden":""}`}>settings</h5>
          </div>
        </div>
       </div>
